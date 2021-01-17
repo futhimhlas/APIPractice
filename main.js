@@ -1,7 +1,10 @@
+let apiData;
+// let apiDataObject;
+
 function getTeamData(teamDataCB){
     const data = null;
     const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+    xhr.withCredentials = false;
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
@@ -17,9 +20,9 @@ function getTeamData(teamDataCB){
 }
 
 getTeamData(function(data){
-    console.log(data);
+    let apiData = data;
+    console.log(apiData)
 });
-
 
 // or make a function at the bottom of the xhr request to the api called printTeamDataToConsole(data) { console.log(data);} and then pass the function to getaTeamData(printTeamDataToConsole);
 
