@@ -1,4 +1,4 @@
-let apiData;
+var apiData ={};
 // let apiDataObject;
 
 function getTeamData(teamDataCB){
@@ -19,9 +19,11 @@ function getTeamData(teamDataCB){
     xhr.send(data);
 }
 
-getTeamData(function(data){
+getTeamData(function(data,i){
     let apiData = data;
-    console.log(apiData)
+
+    for (i=0; i<20; i++) {
+    console.log(apiData.api.teams[i].name)};
 });
 
 // or make a function at the bottom of the xhr request to the api called printTeamDataToConsole(data) { console.log(data);} and then pass the function to getaTeamData(printTeamDataToConsole);
